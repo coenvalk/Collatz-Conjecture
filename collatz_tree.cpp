@@ -32,9 +32,9 @@ void expand(cn_T cn) {
 void print_cn(cn_T base, int indent) {
   if (base == NULL) return;
   for (int i = 0; i < indent; i++) {
-    std::cout << "      ";
+    std::cout << "  ";
   }
-  std::cout << std::left << std::setfill(' ') << std::setw(6) << *(base->data) << std::endl;
+  std::cout << std::left << std::setfill(' ') << std::setw(2) << *(base->data) << std::endl;
   print_cn(base->from_odd, indent + 1);
   print_cn(base->from_even, indent);
 }
