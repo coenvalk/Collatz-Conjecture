@@ -2,14 +2,16 @@
 #include <cstdlib>
 #include <iomanip>
 
+#include "bigint/BigIntegerLibrary.hh"
+
 struct collatz_node {
   struct collatz_node* from_even; // should be data * 2
   struct collatz_node* from_odd; // should be (data - 1) / 3
-  unsigned int data;
+  BigInteger data;
 };
 typedef struct collatz_node* cn_T;
 
-cn_T new_cn(unsigned int n) {
+cn_T new_cn(BigInteger n) {
   cn_T new_cn_T = (cn_T) malloc(sizeof(struct collatz_node));
   new_cn_T->data = n;
   new_cn_T->from_even = NULL;
@@ -36,7 +38,7 @@ void print_cn(cn_T base, int indent) {
   print_cn(base->from_even, indent);
 }
 
-void r_expand(cn_T cn, unsigned int MAX) {
+void r_expand(cn_T cn, BigInteger MAX) {
   if (cn == NULL) return;
   if (cn->data > MAX) return;
   expand(cn);
@@ -52,12 +54,9 @@ void delete_cn(cn_T cn) {
   cn = NULL;
 }
 
-int main(int argc, char* argv[]) {
+int main() {
   cn_T Base = new_cn(1);
-  unsigned int MAX = 100;
-  if (argc > 1) {
-    MAX = (unsigned int) strtoul(argv[1], NULL, 0);
-  }
+  BigInteger MAX = 100;
   r_expand(Base, MAX);
   print_cn(Base, 0);
   delete_cn(Base);
