@@ -11,3 +11,6 @@ big unsolved problems in mathematics.
 in two different ways. collatz_tree shows how numbers branch out
 following the rule in reverse. collatz_sequence shows how a number goes
 down to one.
+
+Program makes use of a Big Integer library:
+Written and maintained by Matt McCutchen <matt@mattmccutchen.net>

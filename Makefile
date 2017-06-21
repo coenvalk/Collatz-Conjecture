@@ -17,12 +17,12 @@ library-objects = \
 	BigIntegerUtils.o \
 
 library-headers = \
-	bigint/NumberlikeArray.hh \
-	bigint/BigUnsigned.hh \
-	bigint/BigInteger.hh \
-	bigint/BigIntegerAlgorithms.hh \
-	bigint/BigUnsignedInABase.hh \
-	bigint/BigIntegerLibrary.hh \
+	BigInt/NumberlikeArray.hh \
+	BigInt/BigUnsigned.hh \
+	BigInt/BigInteger.hh \
+	BigInt/BigIntegerAlgorithms.hh \
+	BigInt/BigUnsignedInABase.hh \
+	BigInt/BigIntegerLibrary.hh \
 
 # To ``make the library'', make all its objects using the implicit rule.
 library: $(library-objects)
