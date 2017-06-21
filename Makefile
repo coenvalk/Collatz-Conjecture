@@ -30,27 +30,30 @@ library: $(library-objects)
 # Conservatively assume that all the objects depend on all the headers.
 $(library-objects): $(library-headers)
 
-# TESTSUITE (NOTE: Currently expects a 32-bit system)
-# Compiling the testsuite.
-collatz_sequence: collatz_sequence.cpp
-	clang++ collatz_sequence.cpp -o collatz_sequence.out
-
 # The rules below build a program that uses the library.  They are preset to
 # build ``sample'' from ``sample.cc''.  You can change the name(s) of the
 # source file(s) and program file to build your own program, or you can write
 # your own Makefile.
 
 # Components of the program.
-program = collatz_tree
-program-objects = collatz_tree.o
+program1 = collatz_tree
+program-objects1 = collatz_tree.o
+
+program2 = collatz_sequence
+program-objects2 = collatz_sequence.o
 
 # Conservatively assume all the program source files depend on all the library
 # headers.  You can change this if it is not the case.
-$(program-objects) : $(library-headers)
+$(program-objects1) : $(library-headers)
+$(program-objects2) : $(library-headers)
 
 # How to link the program.  The implicit rule covers individual objects.
-$(program) : $(program-objects) $(library-objects)
-	g++ $^ -o $@.out
+$(program1) : $(program-objects1) $(library-objects)
+	clang++ $^ -o $@.out
+
+$(program2) : $(program-objects2) $(library-objects)
+	clang++ $^ -o $@.out
+
 
 # Delete all generated files we know about.
 clean :
@@ -62,4 +65,4 @@ clean :
 # cons and depcomp are almost good enough.
 
 # Come back and define default target.
-all : library $(program) collatz_sequence
+all : library $(program1) $(program2)
