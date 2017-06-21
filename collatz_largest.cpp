@@ -4,6 +4,7 @@
 #include "BigInt/BigIntegerLibrary.hh"
 
 BigUnsigned collatz(BigUnsigned n, std::map<BigUnsigned, BigUnsigned>& cache) {
+  BigUnsigned N = n;
   BigUnsigned i = 0;
   std::map<BigUnsigned, BigUnsigned>::iterator it;
   while (n != 1) {
@@ -18,9 +19,10 @@ BigUnsigned collatz(BigUnsigned n, std::map<BigUnsigned, BigUnsigned>& cache) {
       i++;
     } else {
       i += it->second;
+      break;
     }
   }
-  cache[n] = i;
+  cache[N] = i;
   return i;
 }
 
