@@ -49,15 +49,23 @@ program-objects1 = collatz_tree.o
 program2 = collatz_sequence
 program-objects2 = collatz_sequence.o
 
+program3 = collatz_largest
+program-objects3 = collatz_largest.o
+
 # Conservatively assume all the program source files depend on all the library
 # headers.  You can change this if it is not the case.
 $(program-objects1) : $(library-headers)
 $(program-objects2) : $(library-headers)
+$(program-objects3) : $(library-headers)
 
 # How to link the program.  The implicit rule covers individual objects.
 $(program1) : $(program-objects1) $(local-library-objects)
 	clang++ $^ -o $@.out
+
 $(program2) : $(program-objects2) $(local-library-objects)
+	clang++ $^ -o $@.out
+
+$(program3) : $(program-objects3) $(local-library-objects)
 	clang++ $^ -o $@.out
 
 # Delete all generated files we know about.
@@ -70,4 +78,4 @@ clean :
 # cons and depcomp are almost good enough.
 
 # Come back and define default target.
-all : library $(program1) $(program2)
+all : library $(program1) $(program2) $(program3)
