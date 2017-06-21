@@ -10,11 +10,11 @@ all:
 
 # Components of the library.
 library-objects = \
-	bigint/BigUnsigned.o \
-	bigint/BigInteger.o \
-	bigint/BigIntegerAlgorithms.o \
-	bigint/BigUnsignedInABase.o \
-	bigint/BigIntegerUtils.o \
+	BigUnsigned.o \
+	BigInteger.o \
+	BigIntegerAlgorithms.o \
+	BigUnsignedInABase.o \
+	BigIntegerUtils.o \
 
 library-headers = \
 	bigint/NumberlikeArray.hh \
