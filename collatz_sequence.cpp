@@ -1,17 +1,22 @@
 #include <iostream>
 #include <cstdlib>
+#include <string>
+
+#include "bigint/BigIntegerLibrary.hh"
 
 int main(int argc, char* argv[]) {
-  unsigned int n = 100;
+  BigUnsigned n = 100;
   if (argc > 1) {
-    n = (unsigned int) strtoul(argv[1], NULL, 0);
+    std::string A(argv[1]);
+    n = stringToBigUnsigned(A);
   }
   while (n != 1) {
     std::cout << n << std::endl;
     if (n % 2 == 0) {
       n /= 2;
     } else {
-      n = 3 * n + 1;
+      n *= 3;
+      n += 1;
     }
   }
   std::cout << 1 << std::endl;
