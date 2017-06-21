@@ -3,7 +3,7 @@
 #include <iomanip>
 #include <string>
 
-#include "bigint/BigIntegerLibrary.hh"
+#include "BigInt/BigIntegerLibrary.hh"
 
 struct collatz_node {
   struct collatz_node* from_even; // should be data * 2

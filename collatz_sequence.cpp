@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <string>
 
-#include "bigint/BigIntegerLibrary.hh"
+#include "BigInt/BigIntegerLibrary.hh"
 
 int main(int argc, char* argv[]) {
   BigUnsigned n = 100;
