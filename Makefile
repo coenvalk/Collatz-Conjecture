@@ -4,6 +4,8 @@ all:
 # Implicit rule to compile C++ files.  Modify to your taste.
 %.o: %.cc
 	clang++ -c -O2 -Wall -Wextra -pedantic $<
+%.o: %.cpp
+	clang++ -c -O2 -Wall -Wextra -pedantic $<
 
 # Components of the library.
 library-objects = \
