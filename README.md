@@ -15,16 +15,25 @@ numbers under N. There is a default of 100 for all of these programs, but
 this can be changed with a command line argument:
 
 INPUT:
+
 ./collatz_sequence.out 10
 
 EXPECTED OUTPUT:
+
 10
+
 5
+
 16
+
 8
+
 4
+
 2
+
 1
 
 Program makes use of a Big Integer library:
+
 Written and maintained by Matt McCutchen <matt@mattmccutchen.net>
