@@ -79,3 +79,31 @@ clean :
 
 # Come back and define default target.
 all : library $(program1) $(program2) $(program3)
+
+
+test1:
+	./collatz_sequence.out > output.txt
+	diff output.txt tests/test1.txt
+
+test2:
+	./collatz_largest.out > output.txt
+	diff output.txt tests/test2.txt
+
+test3:
+	./collatz_tree.out > output.txt
+	diff output.txt tests/test3.txt
+
+test4:
+	./collatz_sequence.out 1000 > output.txt
+	diff output.txt tests/test4.txt
+
+test5:
+	./collatz_largest.out 1000 > output.txt
+	diff output.txt tests/test5.txt
+
+test6:
+	./collatz_tree.out 1000 > output.txt
+	diff output.txt tests/test6.txt
+
+test: test1 test2 test3 test4 test5 test6
+	rm output.txt
