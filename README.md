@@ -27,6 +27,7 @@ EXPECTED OUTPUT:
 4
 2
 1
+10: 6
 ```
 
 Program makes use of a Big Integer library:
