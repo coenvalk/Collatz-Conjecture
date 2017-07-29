@@ -70,7 +70,7 @@ $(program3) : $(program-objects3) $(local-library-objects)
 
 # Delete all generated files we know about.
 clean :
-	rm -f $(local-library-objects) $(testsuite-cleanfiles) $(program-objects) $(program)
+	rm -f $(local-library-objects) $(testsuite-cleanfiles) $(program-objects1) $(program-objects2) $(program-objects3) $(program)
 
 # I removed the *.tag dependency tracking system because it had few advantages
 # over manually entering all the dependencies.  If there were a portable,
