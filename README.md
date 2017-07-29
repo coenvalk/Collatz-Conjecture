@@ -1,3 +1,6 @@
+# Collatz Conjecture
+[![Build Status](https://travis-ci.org/coenvalk/Collatz-Conjecture.svg?branch=master)](https://travis-ci.org/coenvalk/Collatz-Conjecture)
+
 The collatz conjecture is a conjecture that is based on two simple rules,
 starting with a number N:
 
